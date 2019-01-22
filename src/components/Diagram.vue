@@ -209,7 +209,7 @@
                     let type = this.draggedItem.type
                     let coords = this.convertXYtoViewPort(this.mouseX, this.mouseY)
 
-                    if (type === 'nodesResize') {
+                    if (type === 'onStartResize') {
                         this.resize(coords.x, coords.y, this.draggedItem.node)
                     } else {
                         this.draggedItem.node.x = coords.x - this.initialDragX

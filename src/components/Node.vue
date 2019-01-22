@@ -122,7 +122,7 @@
             mouseDown: function (event, type) {
                 this.$emit(
                     type,
-                    { type: 'nodes', node: this.node },
+                    { type: type, node: this.node },
                     {mouse: event.pageX, node: this.node.x},
                     {mouse: event.pageY, node: this.node.y}
                 )
