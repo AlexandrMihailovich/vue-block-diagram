@@ -8,7 +8,7 @@
                     width="10" height="10"
                     @mouseenter="enter" @mouseleave="leave" @mousedown="startDragNewLink" @mouseup="mouseup">
             </rect>
-            <text v-if="port.showName"  x="12" y="9" font-size="8pt" fill="#000000">{{port.name}}</text>
+            <text v-if="port.showName"  x="12" y="9" font-size="8pt" fill="#000000">{{port.title}}</text>
         </svg>
         <svg :y="port.y + 55" v-else>
             <rect
@@ -19,7 +19,7 @@
                     width="10" height="10"
                     @mouseenter="enter" @mouseleave="leave" @mousedown="startDragNewLink" @mouseup="mouseup">
             </rect>
-            <text v-if="port.showName" :x="nodeWidth - 6" y="9" text-anchor="end" font-size="8pt" fill="#000000">{{port.name}}</text>
+            <text v-if="port.showName" :x="nodeWidth - 6" y="9" text-anchor="end" font-size="8pt" fill="#000000">{{port.title}}</text>
         </svg>
     </g>
 </template>

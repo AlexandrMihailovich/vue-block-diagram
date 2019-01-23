@@ -78,7 +78,7 @@
             </g>
             <slot></slot>
         </g>
-        <polygon :points="points"
+        <polygon class="node-resize" :points="points"
                  fill="#e0e0e0" fill-opacity="0.5" stroke="purple" rx="2" ry="2" stroke-width="0"
                  @mousedown="mouseDown($event, 'onStartResize')"
                  @mouseenter="mouseenter"
@@ -147,5 +147,8 @@
     .node-text {
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .node-resize {
+        cursor: nw-resize;
     }
 </style>

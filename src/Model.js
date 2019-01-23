@@ -88,12 +88,12 @@ class Model {
         let data = JSON.parse(serializedModel)
 
         data.nodes.forEach((node) => {
-            let nodeItem = new Node(node.id, node.title, node.x, node.y, node._width, node.height)
+            let nodeItem = new Node(node.id, node.title, node.x, node.y, node._width, node._height)
             nodeItem.content = node.content
             nodeItem.color = node.color
             this._model.nodes.push(nodeItem)
             node.ports.forEach((port) => {
-                nodeItem.addPort(port.id, port.type, port.name).showName = port.showName
+                nodeItem.addPort(port.id, port.type, port.title).showName = port.showName
             })
         })
 
