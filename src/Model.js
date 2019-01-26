@@ -12,7 +12,8 @@ class Model {
     constructor () {
         this._model = {
             nodes: [],
-            links: []
+            links: [],
+            ports: []
         }
 
         this.currentItem = {}
