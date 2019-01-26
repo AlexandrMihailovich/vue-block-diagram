@@ -1,5 +1,6 @@
 import Node from './Node'
 import Links from './Links'
+import Port from './Port'
 
 let generateId = function () {
     return Math.trunc(Math.random() * 1000)
@@ -45,10 +46,6 @@ class Model {
         const index = this._model.links.indexOf(link)
         this._model.links.splice(index, 1)
     }
-    deletePort (port) {
-        this.deleteLinksByPort(port)
-        port.node.deletePort(port)
-    }
 
     deleteLinksByPort (port) {
         let links = this.getLinksByPort(port)
@@ -69,6 +66,21 @@ class Model {
         }
         this._model.links.push(link)
         return link
+    }
+
+    addPort (id, type, name, node) {
+        let newPort = new Port(id, type, name, node)
+
+        this._model.ports.push(newPort)
+
+        //this.computePortsY()
+
+        return newPort
+    }
+
+    deletePort (port) {
+        const index = this._model.ports.indexOf(port)
+        this._model.ports.splice(index, 1)
     }
 
     serialize () {
